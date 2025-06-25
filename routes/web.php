@@ -111,3 +111,6 @@ Route::post('admin/notifications/bulk', [NotificationController::class, 'sendBul
 Route::post('admin/notifications/test-connection', [NotificationController::class, 'testConnection'])->name('admin.notifications.test-connection');
 Route::delete('admin/notifications/{id}', [NotificationController::class, 'destroy'])->name('admin.notifications.delete');
 
+// Route for the admin to view all invigilator Telegram chat IDs
+Route::get('/admin/invigilator-chat-ids', [AdminController::class, 'showInvigilatorChatIds'])->name('admin.invigilatorChatIds');
+

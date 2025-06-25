@@ -515,6 +515,31 @@ class AdminController extends Controller {
         return back()->with('success', "{$inserted} schedules imported. {$skipped} rows skipped.");
     }
 
+    public function showInvigilatorChatIds(Request $request)
+    {
+        $query = \App\Models\Invigilator::query();
 
+        // Filter by search (name or userID)
+        $search = $request->input('search');
+        if ($search) {
+            $query->where(function($q) use ($search) {
+                $q->where('userName', 'like', "%$search%")
+                  ->orWhere('userID', 'like', "%$search%") ;
+            });
+        }
+
+        // Filter by chat_id status
+        $chatIdStatus = $request->input('chat_id_status');
+        if ($chatIdStatus === 'has') {
+            $query->whereNotNull('chat_id')->where('chat_id', '!=', '');
+        } elseif ($chatIdStatus === 'none') {
+            $query->where(function($q) {
+                $q->whereNull('chat_id')->orWhere('chat_id', '');
+            });
+        }
+
+        $invigilators = $query->select('userName', 'userID', 'chat_id')->get();
+        return view('admin.invigilatorChatIds', compact('invigilators', 'search', 'chatIdStatus'));
+    }
 
 }

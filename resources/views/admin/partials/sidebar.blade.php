@@ -31,5 +31,11 @@
                 <span class="menu-text">Muat Naik Dokumen</span>
             </a>
         </li>
+        <li>
+            <a href="{{ route('admin.invigilatorChatIds') }}">
+                <span>📱</span>
+                <span class="menu-text">Telegram Chat ID</span>
+            </a>
+        </li>
     </ul>
 </div>
