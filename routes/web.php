@@ -8,7 +8,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\NotificationController;
 
 // Route for Landing Page
-Route::get('/', [LandingPageController::class, 'index'])->name('invigilator.landingPage');
+Route::get('/', [LandingPageController::class, 'index'])->name('invigilator.index');
 
 // Routes for Documents functions
 Route::get('/admin/documents', [DocumentController::class, 'adminIndex'])->name('admin.documents');

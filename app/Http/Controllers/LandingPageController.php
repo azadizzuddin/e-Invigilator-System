@@ -9,7 +9,7 @@ class LandingPageController extends Controller
 {
     // Function to return Landing Page view
     public function index() {
-        return view('invigilator.landingPage');
+        return view('invigilator.index');
     }
 
     // Function to return Invigilator Auth Page view

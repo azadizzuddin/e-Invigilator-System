@@ -268,14 +268,14 @@
     <header class="main-header">
         <div class="container">
             <div class="nav-container">
-                <a href="{{route('invigilator.landingPage')}}" class="logo-section">
+                <a href="{{route('invigilator.index')}}" class="logo-section">
                     <img src="{{asset('images/UiTM Logo.png')}}" alt="UiTM Logo">
                     <div class="logo-text">
                         <h1>Sistem e-Invigilator</h1>
                         <p>Pengurusan Pengawasan Peperiksaan UiTM</p>
                     </div>
                 </a>
-                <a href="{{route('invigilator.landingPage')}}" class="back-link">
+                <a href="{{route('invigilator.index')}}" class="back-link">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
